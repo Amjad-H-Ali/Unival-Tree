@@ -70,6 +70,10 @@ const countUnival = (root) => {
 	if (isUnival) {
 		return { count: leftCount + rightCount + 1, unival: true}
 	}
+	// If not, then we only add whatever the children nodes values summed up to.
+	else {
+		return { count: leftCount + rightCount, unival: false}
+	}
 
 
 }
