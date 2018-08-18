@@ -66,6 +66,11 @@ const countUnival = (root) => {
 	if (root.left && root.left.value !== root.value) { isUnival = false;}
 	// If right child exist and not equal to parent, then not Unival
 	if (root.right && root.right.value !== root.value) { isUnival = false;}
+	// If isUnival is still true, we add 1 because we have a unival tree.
+	if (isUnival) {
+		return { count: leftCount + rightCount + 1, unival: true}
+	}
+
 
 }
 
