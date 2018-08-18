@@ -13,21 +13,7 @@ class Tree {
 	}
 }
 
-/*
-
-	Node:
-			 5
-		   /   \
-		  /     \
-		 5	     5
-	   /   \    /  \  
-	  5     5  1    •
-
-	
-	Output: 5
-
-
-*/	  
+	  
 
 // Create Tree as depicted above
 
