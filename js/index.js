@@ -55,8 +55,15 @@ const countUnival = (root) => {
 	// Recursively checking for each Node
 	const { count:leftCount, unival: isLeftUnival } = countUnival(root.left);
 	const { count:rightCount, unival: isRightUnival } = countUnival(root.right);
-
+	
 	let isUnival = true;
+
+	// If any of the following conditions are true, redefine isUnival to false
+
+	// The parent Node is not a Unival tree if either of its children are false
+	if ( !isLeftUnival || !isRightUnival ) {
+		isUnival = false;
+	}
 
 }
 
