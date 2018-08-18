@@ -1,10 +1,13 @@
 console.log('Unival Tree!');
 
+// Tree Class 
 class Tree {
 
 	constructor (value) {
 		this.value = value;
+		// Left Node
 		this.left;
+		// Right Node
 		this.right;
 		
 	}
@@ -17,15 +20,16 @@ class Tree {
 		   /   \
 		  /     \
 		 5	     5
-	   /   \    /    
-	  5     5  1   
+	   /   \    /  \  
+	  5     5  1    •
 
 	
-	Output: 4
+	Output: 5
 
 
 */	  
 
+// Create Tree as depicted above
 
 const root = new Tree (5);
 
@@ -39,16 +43,18 @@ root.left.right = new Tree (5);
 
 root.right.left = new Tree (1);
 
-console.log(root.value);
+root.right.right = new Tree (null);
 
-console.log(root.left.value);
 
-console.log(root.right.value);
+const countUnival = (root) => {
 
-console.log(root.left.left.value);
+	if (root.value === null || root.value === undefined) { 
+		return { totalCount: 0, unival: true}
+	}	
+}
 
-console.log(root.left.right.value);
 
-console.log(root.right.left.value);
+
+
 
 
