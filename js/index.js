@@ -61,9 +61,9 @@ const countUnival = (root) => {
 	// If any of the following conditions are true, redefine isUnival to false
 
 	// The parent Node is not a Unival tree if either of its children are false
-	if ( !isLeftUnival || !isRightUnival ) {
-		isUnival = false;
-	}
+	if ( !isLeftUnival || !isRightUnival ) { isUnival = false;}
+	// If left child exist and not equal to parent, then not Unival
+	if (root.left && root.left.value !== root.value) {isUnival = false;}
 
 }
 
