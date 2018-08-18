@@ -19,7 +19,7 @@ class Tree {
 
 const root = new Tree (5);
 
-root.left = new Tree (5);
+root.left = new Tree (1);
 
 root.right = new Tree (5);
 
@@ -27,9 +27,7 @@ root.left.left = new Tree (5);
 
 root.left.right = new Tree (5);
 
-root.right.left = new Tree (1);
-
-root.right.right = new Tree (null);
+root.right.right = new Tree (5);
 
 
 
