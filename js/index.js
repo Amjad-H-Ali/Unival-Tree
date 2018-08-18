@@ -49,12 +49,15 @@ root.right.right = new Tree (null);
 const countUnival = (root) => {
 
 	if (root === null || root === undefined) { 
-		return { totalCount: 0, unival: true}
+		return { count: 0, unival: true}
 	}
-	// Unpackage total count and unival values from object and store in variables
+	// Unpackage count and unival values from object and store in variables
 	// Recursively checking for each Node
-	const { totalCount:leftCount, unival: isLeftUnival } = countUnival(root.left);
-	const { totalCount:rightCount, unival: isRightUnival } = countUnival(root.right);	
+	const { count:leftCount, unival: isLeftUnival } = countUnival(root.left);
+	const { count:rightCount, unival: isRightUnival } = countUnival(root.right);
+
+	let isUnival = true;
+
 }
 
 
