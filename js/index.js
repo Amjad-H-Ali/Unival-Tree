@@ -46,6 +46,8 @@ root.right.left = new Tree (1);
 root.right.right = new Tree (null);
 
 
+
+
 const howManyUnival = (root) => {
 
 	const { count: totalCount, unival} = countUnival(root);
@@ -85,7 +87,7 @@ const countUnival = (root) => {
 
 }
 
-
+console.log(howManyUnival(root));
 
 
 
