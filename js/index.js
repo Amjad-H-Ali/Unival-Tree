@@ -42,10 +42,9 @@ const howManyUnival = (root) => {
 
 const countUnival = (root) => {
 
-	if (root === null || root === undefined) { 
-		return { count: 0, unival: true}
-	}
-	// Unpackage count and unival values from object and store in variables
+	if (!root) return { count: 0, unival: true};
+
+	// Unpack count and unival values from object and store in variables
 	// Recursively checking for each Node
 	const { count:leftCount, unival: isLeftUnival } = countUnival(root.left);
 	const { count:rightCount, unival: isRightUnival } = countUnival(root.right);
@@ -55,19 +54,18 @@ const countUnival = (root) => {
 	// If any of the following conditions are true, redefine isUnival to false
 
 	// The parent Node is not a Unival tree if either of its children are false
-	if ( !isLeftUnival || !isRightUnival ) { isUnival = false;}
+	if (!(isLeftUnival && isRightUnival)) isUnival = false;
 	// If left child exist and not equal to parent, then not Unival
-	if (root.left && root.left.value !== root.value) { isUnival = false;}
+	if (root.left && root.left.value !== root.value) isUnival = false;
 	// If right child exist and not equal to parent, then not Unival
-	if (root.right && root.right.value !== root.value) { isUnival = false;}
+	if (root.right && root.right.value !== root.value) isUnival = false;
+
 	// If isUnival is still true, we add 1 because we have a unival tree.
-	if (isUnival) {
-		return { count: leftCount + rightCount + 1, unival: true}
-	}
+	if (isUnival) return { count: leftCount + rightCount + 1, unival: true}
 	// If not, then we only add whatever the children nodes values summed up to.
-	else {
+	else 
 		return { count: leftCount + rightCount, unival: false}
-	}
+
 
 }
 
